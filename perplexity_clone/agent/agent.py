@@ -5,6 +5,7 @@ from pydantic_ai import Agent, RunContext
 import requests
 import os
 from exa_py import Exa
+from exa_py.api import SearchResponse
 from dotenv import load_dotenv
 
 from perplexity_clone.BiasBert.biasbert import BiasBert
@@ -35,7 +36,7 @@ search_query_generator = Agent(
 )
 
 summary_generator = Agent(
-    'openai:o1',
+    'openai:gpt-4o-mini',
     system_prompt='You are a helpful AI assistant that summarizes the given text so that it is useful to answer the given user prompt.',
     result_type=str
 )
@@ -59,6 +60,24 @@ def calculate_bias_scores(bias_probabilities: list[list[float]]) -> list[float]:
         scores.append(score)
     return scores
 
+async def summarize_text(search_response: SearchResponse):
+    text_results = [result.text for result in search_response.results]
+    summarized_results = await asyncio.gather(
+        *[
+            summary_generator.run(result.text)
+            for result in search_response.results
+        ]
+    )
+    summarized_results = [
+        {
+            'title': result.title,
+            'url': result.url,
+            'summary': summary.data
+        }
+        for result, summary in zip(search_response.results, summarized_results)
+    ]
+    return summarized_results
+
 @agent.tool
 async def search(ctx: RunContext[str], links_per_query: int = 2) -> list[dict[str, str]]:
     search_queries = await generate_search_queries(ctx.prompt)
@@ -72,16 +91,9 @@ async def search(ctx: RunContext[str], links_per_query: int = 2) -> list[dict[st
             use_autoprompt=False,
             
         )
+        summarized_results = await summarize_text(search_response)
 
-        text_results = [result.text for result in search_response.results]
-        summarized_results = await asyncio.gather(
-            *[{
-                'title': result.title,
-                'url': result.url,
-                'summary': summary_generator.run(result.text)
-            }  for result in search_response.results]
-        )
-        summary_texts = [result['summary'].data for result in summarized_results]
+        summary_texts = [result['summary'] for result in summarized_results]
         bias_probabilities = bias_classifier.classify_batch(summary_texts)
         print(f"Returned Bias probablities for searches {i=}: {bias_probabilities}")
         bias_scores = calculate_bias_scores(bias_probabilities)
@@ -89,7 +101,7 @@ async def search(ctx: RunContext[str], links_per_query: int = 2) -> list[dict[st
         for i, result in enumerate(summarized_results):
             summarized_results[i]['bias'] = bias_scores[i]
             
-        results.extend(summarized_results.results)
+        results.extend(summarized_results)
         bias_score += sum(bias_scores) / len(bias_scores)
         print(f"Current Bias Score: {bias_score}")
         # if -0.3 <= bias_score <= 0.3 or len(results) >= 10:
@@ -104,8 +116,8 @@ def main():
         query = input("Enter a query: ")
         result = agent.run_sync(query)
         response_bias_probalities = bias_classifier.classify(result.data)
-        calculate_bias_scores([response_bias_probalities])
-        print(f"Response Bias: {response_bias_probalities}")
+        response_bias = calculate_bias_scores([response_bias_probalities])
+        print(f"Response Bias: {response_bias[0]}")
         print(result.data)
 
 
