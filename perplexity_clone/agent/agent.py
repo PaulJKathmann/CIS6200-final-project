@@ -1,3 +1,4 @@
+import asyncio
 from pydantic_ai import Agent, RunContext
 # from pydantic_ai.common_tools.duckduckgo import duckduckgo_search_tools
 
@@ -33,6 +34,12 @@ search_query_generator = Agent(
     result_type=list[str]
 )
 
+summary_generator = Agent(
+    'openai:o1',
+    system_prompt='You are a helpful AI assistant that summarizes the given text so that it is useful to answer the given user prompt.',
+    result_type=str
+)
+
 async def generate_search_queries(prompt, n = 3):
     print(f"Generating search queries for: {prompt}")
     
@@ -58,32 +65,35 @@ async def search(ctx: RunContext[str], links_per_query: int = 2) -> list[dict[st
     results = []
     bias_score = 0
 
-    while True:
-        for i, query in enumerate(search_queries.data):
-            search_response = exa.search_and_contents(query,
-                num_results=links_per_query,
-                use_autoprompt=False
-            )
+    #while True:
+    for i, query in enumerate(search_queries.data):
+        search_response = exa.search_and_contents(query,
+            num_results=links_per_query,
+            use_autoprompt=False,
             
-            text_results = [result.text for result in search_response.results]
-            bias_probabilities = bias_classifier.classify_batch(text_results)
-            print(f"Returned Bias probablities for searches {i=}: {bias_probabilities}")
-            bias_scores = calculate_bias_scores(bias_probabilities)
-            print(f"Returned Bias results {i=}: {bias_scores}")
-            search_response.results = [
-                {
-                    'title': result.title,
-                    'url': result.url,
-                    'bias': bias_scores[i],
-                    'text': result.text
-                }
-                for i, result in enumerate(search_response.results)
-            ]
-            results.extend(search_response.results)
-            bias_score += sum(bias_scores) / len(bias_scores)
-            print(f"Current Bias Score: {bias_score}")
-        if -0.3 <= bias_score <= 0.3 or len(results) >= 10:
-            break
+        )
+
+        text_results = [result.text for result in search_response.results]
+        summarized_results = await asyncio.gather(
+            *[{
+                'title': result.title,
+                'url': result.url,
+                'summary': summary_generator.run(result.text)
+            }  for result in search_response.results]
+        )
+        summary_texts = [result['summary'].data for result in summarized_results]
+        bias_probabilities = bias_classifier.classify_batch(summary_texts)
+        print(f"Returned Bias probablities for searches {i=}: {bias_probabilities}")
+        bias_scores = calculate_bias_scores(bias_probabilities)
+        print(f"Returned Bias results {i=}: {bias_scores}")
+        for i, result in enumerate(summarized_results):
+            summarized_results[i]['bias'] = bias_scores[i]
+            
+        results.extend(summarized_results.results)
+        bias_score += sum(bias_scores) / len(bias_scores)
+        print(f"Current Bias Score: {bias_score}")
+        # if -0.3 <= bias_score <= 0.3 or len(results) >= 10:
+        #     break
 
     return results
 
@@ -94,6 +104,7 @@ def main():
         query = input("Enter a query: ")
         result = agent.run_sync(query)
         response_bias_probalities = bias_classifier.classify(result.data)
+        calculate_bias_scores([response_bias_probalities])
         print(f"Response Bias: {response_bias_probalities}")
         print(result.data)
 

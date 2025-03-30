@@ -6,7 +6,7 @@ class BiasBert:
         self.tokenizer = AutoTokenizer.from_pretrained("bert-base-cased")
         self.model = AutoModelForSequenceClassification.from_pretrained("bucketresearch/politicalBiasBERT")
     
-    def classify(self, text):
+    def classify(self, text: str) -> list[float]:
         inputs = self.tokenizer(
             text, 
             return_tensors="pt", 
@@ -21,7 +21,7 @@ class BiasBert:
         # [2] -> right
         return logits.softmax(dim=-1)[0].tolist()
     
-    def classify_batch(self, texts):
+    def classify_batch(self, texts: str) -> list[list[float]]:
         inputs = self.tokenizer(
             texts, 
             return_tensors="pt", 
