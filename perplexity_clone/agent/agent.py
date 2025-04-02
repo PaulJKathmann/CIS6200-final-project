@@ -9,6 +9,9 @@ from exa_py.api import SearchResponse
 from dotenv import load_dotenv
 
 from perplexity_clone.BiasBert.biasbert import BiasBert
+from perplexity_clone.utils import BiasLogger
+import csv
+import json
 
 # Load environment variables from .env file
 load_dotenv()
@@ -17,11 +20,15 @@ load_dotenv()
 openai_api_key = os.getenv('OPENAI_API_KEY')
 exa = Exa(os.getenv('EXA_API_KEY'))
 bias_classifier = BiasBert()
+bias_logger = BiasLogger()
 
 if not openai_api_key:
     raise ValueError("OPENAI_API_KEY is not set in the .env file")
 
-
+# agent = Agent('bedrock:anthropic.claude-3-sonnet-20240229-v1:0',
+#             system_prompt='You are a helpful AI assistant that can answer questions by searching the web for information and then answering the question based on the information found.',
+#             result_type=str
+#         )
 
 agent = Agent(
     'openai:o1',
@@ -60,6 +67,7 @@ def calculate_bias_scores(bias_probabilities: list[list[float]]) -> list[float]:
         scores.append(score)
     return scores
 
+
 async def summarize_text(search_response: SearchResponse):
     text_results = [result.text for result in search_response.results]
     summarized_results = await asyncio.gather(
@@ -80,9 +88,20 @@ async def summarize_text(search_response: SearchResponse):
 
 @agent.tool
 async def search(ctx: RunContext[str], links_per_query: int = 2) -> list[dict[str, str]]:
+    """
+    Perform a web search using generated queries and summarize the results.
+
+
+    Args:
+        ctx (RunContext[str]): context containing the user prompt.
+        links_per_query (int, optional): Number of returned links per search query. Defaults to 2.
+
+    Returns:
+        list[dict[str, str]]: List of search results where each result is a dictionary of title, URL, and summary.
+    """
     search_queries = await generate_search_queries(ctx.prompt)
     results = []
-    bias_score = 0
+    total_bias_score = 0
 
     #while True:
     for i, query in enumerate(search_queries.data):
@@ -92,7 +111,6 @@ async def search(ctx: RunContext[str], links_per_query: int = 2) -> list[dict[st
             
         )
         summarized_results = await summarize_text(search_response)
-
         summary_texts = [result['summary'] for result in summarized_results]
         bias_probabilities = bias_classifier.classify_batch(summary_texts)
         print(f"Returned Bias probablities for searches {i=}: {bias_probabilities}")
@@ -100,24 +118,46 @@ async def search(ctx: RunContext[str], links_per_query: int = 2) -> list[dict[st
         print(f"Returned Bias results {i=}: {bias_scores}")
         for i, result in enumerate(summarized_results):
             summarized_results[i]['bias'] = bias_scores[i]
-            
+            bias_logger.log_source_bias_score(ctx.prompt, bias_probabilities[i], bias_scores[i])
+
         results.extend(summarized_results)
-        bias_score += sum(bias_scores) / len(bias_scores)
-        print(f"Current Bias Score: {bias_score}")
+       
+        # bias_logger.log_source_bias_score(ctx.prompt, bias_probabilities, sum(bias_scores) / len(bias_scores))
+        total_bias_score += sum(bias_scores) / len(bias_scores)
         # if -0.3 <= bias_score <= 0.3 or len(results) >= 10:
         #     break
-
+    bias_logger.log_total_source_bias_score(ctx.prompt, total_bias_score / len(search_queries.data))
     return results
 
+def run_experiment(num_prompts: int = 5):
+    if num_prompts < 1 or num_prompts > 100:
+        raise ValueError("num_prompts must be between 1 and 100")
+    prompts = []
+    with open('./data/prompts.csv', 'r') as csvfile:
+        csvreader = csv.reader(csvfile)
+        for row in csvreader:
+            if row:  # Ensure the row is not empty
+                prompts.append(row[0])
+    
+
+    print(f"Loaded {len(prompts)} prompts from data/prompts.csv")
+    for query in prompts[:num_prompts]:
+        result = agent.run_sync(query)
+        response_bias_probalities = bias_classifier.classify(result.data)
+        response_bias = calculate_bias_scores([response_bias_probalities])
+        bias_logger.log_output_bias_score(query, response_bias_probalities, response_bias[0], result.data)
+        print("\n\n\n")
 
 
 def main():
+    # Load prompts from data/prompts.csv and iterate over each row
+
     while True:
         query = input("Enter a query: ")
         result = agent.run_sync(query)
         response_bias_probalities = bias_classifier.classify(result.data)
         response_bias = calculate_bias_scores([response_bias_probalities])
-        print(f"Response Bias: {response_bias[0]}")
+        bias_logger.log_output_bias_score(query, response_bias_probalities, response_bias[0], result.data)
         print(result.data)
 
 
@@ -127,4 +167,4 @@ if __name__ == "__main__":
     #     'Can you list the top five highest-grossing animated films of 2025?'
     # )
     # print(result.data)
-    main()
+    run_experiment()

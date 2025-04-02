@@ -1,2 +1,3 @@
 .env
 cis6200_model.pem
+*/__pycache__
