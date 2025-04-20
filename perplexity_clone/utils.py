@@ -17,7 +17,7 @@ class BiasLog(BaseModel):
 
 class BiasLogger:
     def __init__(self, log_file_path: str = None, verbose: bool = False):
-        self.log_file_path = log_file_path or './experiment_results/bias_scores_2.json'
+        self.log_file_path = log_file_path or 'experiment/experiment_results/bias_scores_4.json'
         self.bias_scores_data = self.load_bias_scores()
         self.verbose = verbose
     
@@ -29,6 +29,7 @@ class BiasLogger:
         return {}
     
     def log_source_bias_score(self, prompt: str, bias_probabilities: list[float], bias_score: float) -> None:
+        print(f"Logging source bias score for prompt '{prompt}': {bias_probabilities}, {bias_score}")
         if prompt not in self.bias_scores_data:
             self.bias_scores_data[prompt] = BiasLog(source_bias_scores=[], total_source_bias_score=None , output_bias_score=None, output=None, source=None)
         bias_score = BiasScore(score=bias_score, 

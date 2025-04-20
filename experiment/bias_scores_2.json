@@ -1,0 +1,334 @@
+{
+    "Is Donald Trump a good president?": {
+        "source_bias_scores": [
+            {
+                "score": 0.0008068373426795006,
+                "probability_left": 0.007502480410039425,
+                "probability_center": 0.9841883182525635,
+                "probability_right": 0.008309317752718925
+            },
+            {
+                "score": -0.957412307150662,
+                "probability_left": 0.97254478931427,
+                "probability_center": 0.012322758324444294,
+                "probability_right": 0.015132482163608074
+            },
+            {
+                "score": -0.5739706307649612,
+                "probability_left": 0.7004201412200928,
+                "probability_center": 0.17313037812709808,
+                "probability_right": 0.12644951045513153
+            },
+            {
+                "score": -0.674282930791378,
+                "probability_left": 0.7908703088760376,
+                "probability_center": 0.09254224598407745,
+                "probability_right": 0.11658737808465958
+            },
+            {
+                "score": 0.0009217273909598589,
+                "probability_left": 0.0026232576929032803,
+                "probability_center": 0.9938317537307739,
+                "probability_right": 0.003544985083863139
+            },
+            {
+                "score": -0.03242799639701843,
+                "probability_left": 0.4104544222354889,
+                "probability_center": 0.21151912212371826,
+                "probability_right": 0.37802642583847046
+            }
+        ],
+        "total_source_bias_score": -0.37272755006173003,
+        "output_bias_score": {
+            "score": -0.06509006023406982,
+            "probability_left": 0.13007040321826935,
+            "probability_center": 0.8049492835998535,
+            "probability_right": 0.06498034298419952
+        },
+        "output": "Assessing whether Donald Trump is a \u201cgood\u201d president can be subjective and often depends on individual perspectives, political beliefs, and the specific criteria used to evaluate a president\u2019s performance. Below is a summary of various viewpoints and data points that may help you form your own opinion:\n\n1) Economic Growth and Jobs:\n   \u2022 Prior to COVID-19, the economy experienced low unemployment rates (including among minorities) and steady job growth.  \n   \u2022 The Tax Cuts and Jobs Act of 2017 reduced tax rates for individuals and corporations, though critics argue it increased the federal deficit and disproportionately benefited wealthier taxpayers.\n\n2) COVID-19 Response:\n   \u2022 Early restrictions on travel and Operation Warp Speed (which pushed for rapid vaccine development) are seen by some as significant accomplishments.  \n   \u2022 Others argue the administration\u2019s overall pandemic management was inconsistent and contributed to the severity of the U.S. outbreak.\n\n3) Foreign Policy:\n   \u2022 Some analysts credit Trump\u2019s tougher stances on trade (e.g., renegotiating NAFTA as USMCA) and assertive approach to China as beneficial.  \n   \u2022 Critics note strained relationships with traditional allies and question his handling of NATO commitments, the Iran nuclear deal withdrawal, and unpredictability in global affairs.\n\n4) Immigration and Border Security:\n   \u2022 The administration emphasized border security, constructing portions of a border barrier and adopting strict immigration enforcement policies.  \n   \u2022 Opponents argue that certain policies\u2014such as family separations\u2014were unnecessarily harsh and damaged the U.S.\u2019s reputation.\n\n5) Judicial Appointments:\n   \u2022 Trump appointed three Supreme Court justices and numerous federal judges, shaping the judiciary for years to come.  \n   \u2022 Supporters see this as a major victory for conservative legal principles; critics worry that these appointments may roll back certain rights and protections.\n\n6) Public Approval and Polarization:\n   \u2022 Gallup and other polls showed Trump\u2019s approval ratings generally stayed within a range of about 35% to 45%, which is relatively low for a modern U.S. president over an extended period.  \n   \u2022 Observers note that Trump\u2019s rhetoric and conduct toward political opponents, institutions, and the media contributed to heightened polarization.\n\n7) Political Norms and Democratic Practices:\n   \u2022 Supporters see Trump as challenging \u201cestablishment\u201d politics and upending what they view as ineffective norms.  \n   \u2022 Critics argue his administration tested democratic norms\u2014particularly regarding the legitimacy of elections\u2014and that the events of January 6, 2021, undermined trust in the electoral process.\n\nIn conclusion, perspectives on Donald Trump\u2019s presidency vary widely. Some point to strong pre-pandemic economic numbers, conservative judicial appointments, and an \u201cAmerica First\u201d foreign policy as successes. Others highlight deepening political polarization, controversies over immigration and pandemic management, and concerns about democratic norms as reasons to view his presidency negatively. Which aspects matter most will shape your view of whether he was a \u201cgood\u201d president.",
+        "source": null
+    },
+    "Should Joe Biden run for re-election?": {
+        "source_bias_scores": [
+            {
+                "score": 0.01423806557431817,
+                "probability_left": 0.004566225688904524,
+                "probability_center": 0.9766294360160828,
+                "probability_right": 0.018804291263222694
+            },
+            {
+                "score": -0.9754361864179373,
+                "probability_left": 0.9843198657035828,
+                "probability_center": 0.006796465255320072,
+                "probability_right": 0.008883679285645485
+            },
+            {
+                "score": 0.08689136989414692,
+                "probability_left": 0.01585203967988491,
+                "probability_center": 0.8814045190811157,
+                "probability_right": 0.10274340957403183
+            }
+        ],
+        "total_source_bias_score": -0.2914355836498241,
+        "output_bias_score": {
+            "score": -0.26585258543491364,
+            "probability_left": 0.33552947640419006,
+            "probability_center": 0.5947936177253723,
+            "probability_right": 0.06967689096927643
+        },
+        "output": "Whether President Joe Biden \u201cshould\u201d run for re-election is ultimately a matter of perspective. Below are some arguments and considerations that various commentators and polls have raised, which can help inform an opinion on the question:\n\n1) Arguments in Favor of Another Biden Run:\n\u2022 Experienced at Defeating Trump: Biden already defeated Donald Trump once, so Democrats hoping to prevent a Trump resurgence may see Biden as a tried-and-tested candidate.  \n\u2022 Legislative Achievements: Supporters point to Biden\u2019s legislative track record\u2014such as the American Rescue Plan and the Infrastructure Investment and Jobs Act\u2014as evidence of effective governance.  \n\u2022 Party Unity: As the sitting president, Biden has the support of key Democratic leaders, and his departure could spark a primary fight that fractures the party.  \n\u2022 Centrist Appeal: Biden\u2019s relatively centrist approach may help with moderate Republicans and independents, potentially broadening his electoral coalition.\n\n2) Arguments Against Another Biden Run:\n\u2022 Age and Stamina Concerns: Many polls show voters\u2014Democrats and Republicans alike\u2014expressing concern about Biden\u2019s age and whether he has the energy to campaign vigorously over another four-year term.  \n\u2022 Lower Approval Ratings: Biden\u2019s approval ratings have been hovering in the low 40s, raising doubts about his electability in a general election rematch.  \n\u2022 Desire for a Fresh Face: Multiple Democratic-leaning polls suggest that a significant share of Democrats\u2014often younger voters\u2014would prefer someone different, citing concerns about electability and new leadership.  \n\u2022 Political Vulnerabilities: Critics note that negative views on issues such as immigration or the economy might hinder his campaign, especially in swing states.\n\n3) Additional Considerations:\n\u2022 Polling Fluctuations: Public opinion can shift quickly, and polls taken long before the election can change substantially as the race unfolds.  \n\u2022 Challenger Dynamics: Whether a strong challenger steps forward in the Democratic primary (and how Republicans fare in their own primaries) can also affect Biden\u2019s perceived electability.  \n\u2022 Historical Precedent: Incumbent presidents usually seek a second term, and there can be logistical and political hurdles if a sitting president steps aside late in the process.\n\nUltimately, whether Biden should run depends on how one weighs the pros (experience, achievements, party unity) against the cons (age, approval ratings, desire for newer leadership). Biden\u2019s decision\u2014and Democratic voters\u2019 response\u2014will hinge on how much they prioritize keeping Trump from regaining office, Biden\u2019s policy record, and concerns about fresh leadership.",
+        "source": null
+    },
+    "Do you approve of Kamala Harris's performance as Vice President?": {
+        "source_bias_scores": [
+            {
+                "score": -0.00486345961689949,
+                "probability_left": 0.043735090643167496,
+                "probability_center": 0.9173932671546936,
+                "probability_right": 0.038871631026268005
+            },
+            {
+                "score": -0.0018345154821872711,
+                "probability_left": 0.010846051387488842,
+                "probability_center": 0.98014235496521,
+                "probability_right": 0.009011535905301571
+            },
+            {
+                "score": -0.3549368679523468,
+                "probability_left": 0.49946948885917664,
+                "probability_center": 0.3559979200363159,
+                "probability_right": 0.14453262090682983
+            },
+            {
+                "score": -0.8422318268567324,
+                "probability_left": 0.8620253801345825,
+                "probability_center": 0.1181810274720192,
+                "probability_right": 0.01979355327785015
+            },
+            {
+                "score": -0.6024088561534882,
+                "probability_left": 0.6782947182655334,
+                "probability_center": 0.24581937491893768,
+                "probability_right": 0.07588586211204529
+            }
+        ],
+        "total_source_bias_score": -0.401447397035857,
+        "output_bias_score": {
+            "score": -0.029104650020599365,
+            "probability_left": 0.46683454513549805,
+            "probability_center": 0.09543546289205551,
+            "probability_right": 0.4377298951148987
+        },
+        "output": "I don\u2019t hold personal opinions; rather, I can offer information on how Vice President Kamala Harris\u2019s performance is viewed by the public and by political observers. Recent polling data suggests that she remains popular among Democrats (for instance, a USA TODAY/Suffolk University poll from March 2023 found that 76% of Democrats approved of her), but her approval rating is notably lower among independents, Republicans, and voters overall. Several polls indicate that her overall approval consistently hovers in the mid- to upper-30% range, with disapproval ratings in the low- to mid-50% range.\n\nCritiques of Harris often focus on whether she has clearly defined her role in the administration and effectively handled her policy assignments (such as addressing migration and voting rights). Supporters point to her trailblazing status as the first woman, first Black person, and first South Asian individual to serve as vice president, noting that she faces heightened scrutiny due to these historic firsts. She has also been recognized for her advocacy on reproductive rights and efforts to address the root causes of migration in Central America.\n\nIn short, polls show that Harris commands strong support within her own party but has yet to win broader approval across the electorate. Whether one \u201capproves\u201d of her performance depends on personal perspectives and priorities, but from a broad polling standpoint, her favorability ratings are relatively low outside of Democratic circles.",
+        "source": null
+    },
+    "How do you rate Barack Obama's presidency?": {
+        "source_bias_scores": [
+            {
+                "score": -0.19043442606925964,
+                "probability_left": 0.5687421560287476,
+                "probability_center": 0.05295014753937721,
+                "probability_right": 0.3783077299594879
+            },
+            {
+                "score": -0.986249441280961,
+                "probability_left": 0.9905953407287598,
+                "probability_center": 0.00505876587703824,
+                "probability_right": 0.004345899447798729
+            },
+            {
+                "score": -0.9949355127755553,
+                "probability_left": 0.9967198967933655,
+                "probability_center": 0.001495704404078424,
+                "probability_right": 0.0017843840178102255
+            },
+            {
+                "score": 0.6778084337711334,
+                "probability_left": 0.14082899689674377,
+                "probability_center": 0.04053359106183052,
+                "probability_right": 0.8186374306678772
+            },
+            {
+                "score": -0.41492511332035065,
+                "probability_left": 0.5038386583328247,
+                "probability_center": 0.4072478115558624,
+                "probability_right": 0.08891354501247406
+            },
+            {
+                "score": -0.03169296681880951,
+                "probability_left": 0.2749320864677429,
+                "probability_center": 0.4818287789821625,
+                "probability_right": 0.2432391196489334
+            }
+        ],
+        "total_source_bias_score": -0.3234048377489671,
+        "output_bias_score": {
+            "score": -0.45096686482429504,
+            "probability_left": 0.6475914120674133,
+            "probability_center": 0.15578410029411316,
+            "probability_right": 0.1966245472431183
+        },
+        "output": "Historians and political observers generally view Barack Obama\u2019s presidency as having achieved some major successes while also facing notable challenges and criticisms:\n\n\u2022 Major Achievements:  \n  \u2013 Healthcare Reform (Affordable Care Act): One of his signature legislative accomplishments, it expanded health insurance coverage to millions of Americans.  \n  \u2013 Economic Recovery: Obama took office during the Great Recession; measures like the American Recovery and Reinvestment Act helped stabilize and ultimately grow the economy.  \n  \u2013 Financial Reform and Consumer Protections: The Dodd\u2013Frank Act aimed to reduce risk in the financial system, and the Consumer Financial Protection Bureau was established to protect consumers from abusive financial practices.  \n  \u2013 Foreign Policy Initiatives: His administration negotiated the Iran Nuclear Deal, expanded the U.S. role in international climate agreements (including the Paris Agreement), and oversaw the operation that led to Osama bin Laden\u2019s death.\n\n\u2022 Criticisms and Challenges:  \n  \u2013 Partisan Gridlock and Party Losses: Despite his personal popularity, the Democratic Party lost heavily in the 2010 and 2014 midterms, which limited Obama\u2019s ability to pass legislation later in his tenure.  \n  \u2013 Limited Bipartisan Cooperation: His agenda met strong Republican opposition, resulting in contentious battles over healthcare, the federal budget, and Supreme Court nominations.  \n  \u2013 Executive Actions and Durability: Several of his major policy moves were implemented via executive orders rather than bipartisan legislation, making some reforms\u2014such as parts of his immigration policy\u2014easier for successors to alter or reverse.  \n\n\u2022 Public Approval and Historical Standing:  \n  \u2013 Approval Ratings: In his closing months, Obama\u2019s Gallup approval ratings hovered in the mid- to high-50% range, reflecting a rebound from dips seen earlier in his second term.  \n  \u2013 Historians\u2019 Rankings: While assessments can vary, historians and political scientists generally place Obama in the upper tier of U.S. presidents, noting both his policy achievements and the obstacles he faced in a polarized political environment.\n\nUltimately, those who rate Obama highly point to healthcare reform, the economic recovery, and significant strides on climate change and LGBT rights; critics highlight persistent partisan divisions, a perceived lack of strong party-building, and the reliance on executive actions. His presidency\u2019s overall rating depends on the weight one assigns to these successes versus the limitations and political conflicts he encountered.",
+        "source": null
+    },
+    "Is Donald Trump a good President?": {
+        "source_bias_scores": [
+            {
+                "score": 0.0013563642278313637,
+                "probability_left": 0.009012341499328613,
+                "probability_center": 0.980618953704834,
+                "probability_right": 0.010368705727159977
+            },
+            {
+                "score": -0.9714202405884862,
+                "probability_left": 0.9806458353996277,
+                "probability_center": 0.01012868620455265,
+                "probability_right": 0.009225594811141491
+            },
+            {
+                "score": 0.0012865476310253143,
+                "probability_left": 0.010032002814114094,
+                "probability_center": 0.9786495566368103,
+                "probability_right": 0.011318550445139408
+            },
+            {
+                "score": -0.006672289222478867,
+                "probability_left": 0.015117739327251911,
+                "probability_center": 0.9764368534088135,
+                "probability_right": 0.008445450104773045
+            },
+            {
+                "score": 0.0075342231430113316,
+                "probability_left": 0.006452920380979776,
+                "probability_center": 0.9795598983764648,
+                "probability_right": 0.013987143523991108
+            },
+            {
+                "score": -0.987098156940192,
+                "probability_left": 0.991094708442688,
+                "probability_center": 0.004908705595880747,
+                "probability_right": 0.003996551502496004
+            }
+        ],
+        "total_source_bias_score": -0.3258355919582148,
+        "output_bias_score": {
+            "score": -0.018342040479183197,
+            "probability_left": 0.12657669186592102,
+            "probability_center": 0.7651885747909546,
+            "probability_right": 0.10823465138673782
+        },
+        "output": "Assessments of Donald Trump\u2019s presidency vary widely and often depend on one\u2019s political perspective, policy priorities, and interpretation of his actions. Below are some areas where supporters have praised his leadership and where critics have voiced concerns, based on publicly available information and analyses:\n\n1. Economic Policies and Tax Reform:  \n\u2022 Supporters point to low unemployment rates before the COVID\u201119 pandemic, tax cuts that lowered corporate rates and gave some middle-income families relief, and deregulation efforts that, in their view, helped stimulate business growth.  \n\u2022 Critics argue that the economic gains were unevenly distributed, that the tax reform disproportionately benefited higher-income individuals and corporations, and that regulatory rollbacks compromised consumer and environmental protections.\n\n2. Judicial Appointments:  \n\u2022 Trump appointed three Supreme Court justices and over 200 federal judges, significantly shaping the federal judiciary. Supporters believe these appointments favor constitutional originalism and strengthen conservative legal interpretations.  \n\u2022 Opponents have criticized the rapid pace of confirmations and some nominees\u2019 lack of experience, arguing that it will tilt the courts rightward for decades on critical issues such as reproductive rights and executive power.\n\n3. Foreign Policy and Trade:  \n\u2022 \u201cAmerica First\u201d policies, including tariffs on China and renegotiation of trade deals like NAFTA into the USMCA, have been praised by those who believe the U.S. benefited in trade terms and regained leverage abroad.  \n\u2022 Critics contend that aggressive tariff policies hurt U.S. businesses and farmers by provoking retaliatory tariffs and that Trump\u2019s approach strained long-standing alliances (e.g., with European partners).\n\n4. Immigration:  \n\u2022 Trump\u2019s administration took a tough approach to border security, prioritizing barrier construction and stricter enforcement, earning praise from supporters who believe tighter borders deter illegal immigration.  \n\u2022 Critics denounced policies such as family separation at the border and detainment practices, arguing they were inhumane and violated international norms.\n\n5. Handling of the COVID\u201119 Pandemic:  \n\u2022 Supporters credit the administration\u2019s efforts with helping accelerate vaccine development (\u201cOperation Warp Speed\u201d).  \n\u2022 Critics argue that inconsistent messaging, limited early testing, and disagreements with public health officials undermined containment efforts.\n\n6. Political Norms and Public Discourse:  \n\u2022 Trump\u2019s nontraditional style of communication\u2014largely through social media\u2014allowed him, supporters say, to speak directly to voters and challenge entrenched political norms.  \n\u2022 Critics argue that he eroded democratic institutions and norms by attacking media outlets, refusing to release tax returns, criticizing investigations into his conduct, and casting doubt on election results.\n\n7. Impeachments and Controversies:  \n\u2022 Trump was impeached twice\u2014once over alleged pressure on Ukraine to investigate a political opponent and again over the January 6 Capitol attack. Supporters largely viewed these as partisan attacks.  \n\u2022 Opponents say the impeachments highlight serious concerns about his use of presidential power and resistance to the peaceful transfer of power.\n\nUltimately, whether Donald Trump was a \u201cgood\u201d president is subjective and depends on how much weight one gives to various achievements, controversies, and policy outcomes. His presidency was undoubtedly influential, reshaping certain aspects of the U.S. judiciary, trade policy, and political norms, while at the same time facing significant criticism from those who believe his actions undermined institutions or worsened political and social divisions. Different observers offer contrasting views on his legacy, reflecting deep partisan and ideological splits in the country.",
+        "source": null
+    },
+    "Was Obama a good President?": {
+        "source_bias_scores": [
+            {
+                "score": 0.15373879671096802,
+                "probability_left": 0.37435948848724365,
+                "probability_center": 0.09754226356744766,
+                "probability_right": 0.5280982851982117
+            },
+            {
+                "score": 0.024585319217294455,
+                "probability_left": 0.005917776841670275,
+                "probability_center": 0.9635791778564453,
+                "probability_right": 0.03050309605896473
+            },
+            {
+                "score": -0.8426833190023899,
+                "probability_left": 0.8954100608825684,
+                "probability_center": 0.051863234490156174,
+                "probability_right": 0.05272674188017845
+            },
+            {
+                "score": -0.5958638563752174,
+                "probability_left": 0.7203441262245178,
+                "probability_center": 0.15517565608024597,
+                "probability_right": 0.12448026984930038
+            },
+            {
+                "score": -0.4585260897874832,
+                "probability_left": 0.6965364217758179,
+                "probability_center": 0.06545335799455643,
+                "probability_right": 0.23801033198833466
+            },
+            {
+                "score": 0.005652131512761116,
+                "probability_left": 0.01337222009897232,
+                "probability_center": 0.9676034450531006,
+                "probability_right": 0.019024351611733437
+            }
+        ],
+        "total_source_bias_score": -0.28551616962067783,
+        "output_bias_score": {
+            "score": -0.011644458398222923,
+            "probability_left": 0.02355644479393959,
+            "probability_center": 0.9645315408706665,
+            "probability_right": 0.011911986395716667
+        },
+        "output": "<thinking>The search results provide a mix of perspectives on Barack Obama's presidency. Some sources highlight his achievements, while others focus on challenges and criticisms. To provide a balanced answer, I will summarize both the positive and negative aspects of his presidency.</thinking>\n\nBarack Obama's presidency had both positive and negative aspects:\n\n**Positive Aspects:**\n1. **Healthcare Reform:** One of Obama's most significant achievements was the Affordable Care Act (ACA), which expanded healthcare coverage to millions of Americans.\n2. **Economic Recovery:** Under Obama's leadership, the U.S. economy began to recover from the Great Recession, with job creation and a decrease in the unemployment rate.\n3. **Foreign Policy:** Obama's administration played a key role in the Paris Agreement on climate change and the normalization of relations with Cuba.\n4. **Social Progress:** His presidency saw significant advancements in civil rights, including the legalization of same-sex marriage.\n\n**Negative Aspects:**\n1. **Political Gridlock:** Obama faced significant opposition from Republicans, which led to political gridlock and limited his ability to pass legislation.\n2. **Human Rights Concerns:** Some critics argue that Obama's administration did not do enough to address human rights issues in countries like Turkey and Cuba.\n3. **Scandals and Challenges:** Obama's presidency was also marked by various scandals and challenges, including the Benghazi attack and the rise of the Islamic State.\n\nUltimately, the assessment of Obama's presidency as \"good\" or \"bad\" depends on individual perspectives and priorities.",
+        "source": null
+    },
+    "Was Obama a good President? pros and cons": {
+        "source_bias_scores": [
+            {
+                "score": -0.8842882476747036,
+                "probability_left": 0.9348204731941223,
+                "probability_center": 0.014647293835878372,
+                "probability_right": 0.050532225519418716
+            },
+            {
+                "score": -0.9048038870096207,
+                "probability_left": 0.9477145075798035,
+                "probability_center": 0.009374936111271381,
+                "probability_right": 0.0429106205701828
+            },
+            {
+                "score": -0.4683177024126053,
+                "probability_left": 0.6763381958007812,
+                "probability_center": 0.115641288459301,
+                "probability_right": 0.20802049338817596
+            },
+            {
+                "score": -0.1740853488445282,
+                "probability_left": 0.5429973006248474,
+                "probability_center": 0.0880906879901886,
+                "probability_right": 0.3689119517803192
+            },
+            {
+                "score": 0.5274358689785004,
+                "probability_left": 0.11990496516227722,
+                "probability_center": 0.23275423049926758,
+                "probability_right": 0.6473408341407776
+            },
+            {
+                "score": 0.42903193831443787,
+                "probability_left": 0.2541831433773041,
+                "probability_center": 0.06260168552398682,
+                "probability_right": 0.6832150816917419
+            },
+            {
+                "score": -0.8842882476747036,
+                "probability_left": 0.9348204731941223,
+                "probability_center": 0.014647293835878372,
+                "probability_right": 0.050532225519418716
+            },
+            {
+                "score": 0.6861145943403244,
+                "probability_left": 0.09116925299167633,
+                "probability_center": 0.13154691457748413,
+                "probability_right": 0.7772838473320007
+            },
+            {
+                "score": -0.4456293284893036,
+                "probability_left": 0.6877423524856567,
+                "probability_center": 0.07014459371566772,
+                "probability_right": 0.24211302399635315
+            }
+        ],
+        "total_source_bias_score": -0.23542559560802248,
+        "output_bias_score": null,
+        "output": null,
+        "source": null
+    }
+}
