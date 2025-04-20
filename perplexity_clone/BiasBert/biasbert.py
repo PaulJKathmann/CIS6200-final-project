@@ -21,7 +21,7 @@ class BiasBert:
         # [2] -> right
         return logits.softmax(dim=-1)[0].tolist()
     
-    def classify_batch(self, texts: str) -> list[list[float]]:
+    def classify_batch(self, texts: list[str]) -> list[list[float]]:
         inputs = self.tokenizer(
             texts, 
             return_tensors="pt", 
