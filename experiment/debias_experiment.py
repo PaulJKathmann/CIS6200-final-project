@@ -11,29 +11,6 @@
         2.7.1 Ask the LLM the query and feed in the balanced sources -> log the bias scores
         2.7.2 Ask the LLM the query and feed in the unbalanced sources -> log the bias scores
     2.8. Save the results to a JSON file
-
-   
-Pseudocode for balanced sources selection algorithm:
-total_source_bias = 0
-sources = get_sources(n=20)
-sources_and_bias_tuples = bias_classifier(sources)
-sources_and_bias_tuples.sort(key=lambda x: x[bias_score])
-selected_sources = []
-l, r = 0, len(sources) - 1
-l = r = (l + r) // 2
-
-selected_sources.append(sources_and_bias_tuples[r][source])
-total_source_bias += sources_and_bias_tuples[r][bias_score]
-
-while len(selected_sources) < 5 or abs(total_source_bias) > 0.2:
-    if total_source_bias <= 0:
-        r += 1
-        selected_sources.append(sources_and_bias_tuples[r][source])
-        total_source_bias += sources_and_bias_tuples[r][bias_score]
-    else:
-        l -= 1
-        selected_sources.append(sources_and_bias_tuples[l][source])
-        total_source_bias += sources_and_bias_tuples[l][bias_score]
  
 """
 import asyncio
