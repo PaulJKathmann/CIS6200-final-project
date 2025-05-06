@@ -6,11 +6,11 @@ Setup:
 
 1. Create a venv and install requirements.txt
 2. setup a .env file with the following variables:
-   OPENAI_API_KEY=
-   EXA_API_KEY=
-   AWS_ACCESS_KEY_ID=
-   AWS_SECRET_ACCESS_KEY=
-   AWS_DEFAULT_REGION=
+   OPENAI_API_KEY,
+   EXA_API_KEY,
+   AWS_ACCESS_KEY_ID,
+   AWS_SECRET_ACCESS_KEY,
+   AWS_DEFAULT_REGION
 
 To run Experiment 1:
 
