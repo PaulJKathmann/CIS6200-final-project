@@ -4,7 +4,7 @@ import torch
 class BiasBert:
     def __init__(self):
         self.tokenizer = AutoTokenizer.from_pretrained("bert-base-cased")
-        self.model = AutoModelForSequenceClassification.from_pretrained("bucketresearch/politicalBiasBERT")
+        self.model = AutoModelForSequenceClassification.from_pretrained("vanikanoria/politicalbiasbert-finetuned")
     
     def classify(self, text: str) -> list[float]:
         inputs = self.tokenizer(
